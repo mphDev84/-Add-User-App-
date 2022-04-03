@@ -9,7 +9,7 @@ const Header = ()=>{
         
         <div className="header-div">
             <h1 className="header">My Firebase User Database</h1>
-            <p>Fetch api component, see photo on phone!!</p>
+            <p>Fetch api component</p>
         </div>
     )
 };
