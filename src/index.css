@@ -14,4 +14,18 @@ code {
 .header{
   font-family: Georgia, 'Times New Roman', Times, sans-serif;
   color:blue;
+  letter-spacing: 4px;
+}
+.header-info{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+.display-user-data{
+  margin-top: 20px;
+}
+.user-data{
+  color: red;
+  font-family: monospace;
+  font-size: 20px;
+  margin:0 0 0 0;
 }

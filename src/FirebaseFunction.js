@@ -16,7 +16,6 @@ const FirebaseFunction=()=>{
   //get state from UserContext
     const state = useContext(UserContext);
     const myStateValue={...state}
-    console.log(myStateValue)
     
     //firebase config details:
     const firebaseConfig = {
@@ -37,23 +36,13 @@ const FirebaseFunction=()=>{
     
     //add data to firestore
     const setUser = async(db) =>{
-    console.log(state)
+    
     if(state.firstName!==''&&state.lastName!==''&&state.userId!=='') await addDoc(collection(db, "Users"), myStateValue);
     };
 
   setUser(db);
 
-    //get data from firestore
-      const getUser = async (db)=> {
-      const usersCollection = collection(db, 'Users');
-      const usersSnapShot = await getDocs(usersCollection);
-      const userList = usersSnapShot.docs.map(doc => doc.data())
-      
-      console.log(userList);
-      
-      return userList 
-      }
-  getUser(db);
+
   
 const newPostKey = Date.now();
 const updates = {};
