@@ -10,7 +10,7 @@ import { UserContext, UserDataContext } from "./UserForm";
 let dataHasBeenFetched=0;
 
 const DisplayUserInfo=()=>{ 
-
+//state to store user data received from database
   const [myStateData, setMyStateData]= useState(null)   
        //firebase config details:
        const firebaseConfig = {api key etc goes here };
