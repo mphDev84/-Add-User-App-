@@ -13,16 +13,7 @@ const DisplayUserInfo=()=>{
 
   const [myStateData, setMyStateData]= useState(null)   
        //firebase config details:
-       const firebaseConfig = {
-        apiKey: "AIzaSyBC0hatdsNgXqM2wY3QwjAirWcu_0gtp2g",
-        authDomain: "my-music-app-8c87c.firebaseapp.com",
-        databaseURL: "https://my-music-app-8c87c-default-rtdb.firebaseio.com",
-        projectId: "my-music-app-8c87c",
-        storageBucket: "my-music-app-8c87c.appspot.com",
-        messagingSenderId: "719044468019",
-        appId: "1:719044468019:web:56c837464ac8a545cbf246",
-        measurementId: "G-YYT4QP7D1W"
-      };
+       const firebaseConfig = {api key etc goes here };
 
     //get data from firestore
     const app = initializeApp(firebaseConfig);
