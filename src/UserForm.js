@@ -3,31 +3,55 @@ import { useState, useContext, createContext, useMemo, useEffect, useRef } from 
 import DisplayUserInfo from './DisplayUserInfo';
 import FirebaseFunction from './FirebaseFunction';
 
+//create a useContext variable
 export const UserContext = createContext();
+
 
 const UserForm =()=>{
 
     const populateDataFunction = (e)=>{
 
         e.preventDefault(); 
-        setFirstName(inputRef.current.value);
-        setLastName(lastNameRef.current.value);
-        setUserId(userIdRef.current.value)
+        //create regular expressions to test against user input
+        const myRegexFirstName = /^[a-z]+([\ A-Za-z]+)*$/gi;
+        const myRegexLastName = /^[a-z]+$/gi;
+        const myRegexUserId = /^[A-Z]\d\d\d$/gi;
 
-        console.log(inputRef.current.value)
+        //assign user input to variables
+        const firstNameValue = inputRef.current.value;
+        const lastNameValue = lastNameRef.current.value;
+        const userIdValue = userIdRef.current.value
+
+        //use regex to validate user input using .test()
+        if(myRegexFirstName.test(firstNameValue)){
+        setFirstName(firstNameValue)
+        alert("User added to Database!");}
+        else{alert("Enter a valid first name")};
+
+
+        if(myRegexLastName.test(lastNameValue)){
+        setLastName(lastNameValue);}
+        else{alert("Enter a valid last name")};
+
+        if(myRegexUserId.test(userIdValue)){
+        setUserId(userIdValue);}
+        else{alert("Enter a valid user ID")};
+
+        console.log(firstNameValue)
         e.currentTarget.reset();
 
     };
-
+    //create refs so user input can be retrieved from form
     const inputRef= useRef();
     const lastNameRef= useRef();
     const userIdRef= useRef();
-    
 
+    //create local state variables to store user input
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName]= useState('');
     const[userId, setUserId]=useState('');
 
+    //create a Context.Provider value to pass state to child components
     const providerValue = useMemo(() => ({
         firstName,
         lastName,
@@ -38,10 +62,10 @@ const UserForm =()=>{
         <UserContext.Provider  value={providerValue}>
         <div className='form-div'>
              <form className='user-form' onSubmit={populateDataFunction}>
-                <span>First Name: </span><input type="text" name="firstName" ref={inputRef} placeholder='enter your first name'/><br></br>
-                <span>Last Name: </span><input type="text" ref={lastNameRef} placeholder='enter your last name'  /><br></br>
-                <span>UserId: </span><input type="text" ref={userIdRef} placeholder='enter your user ID'  /><br></br>
-                <button type="submit" value="submit">Submit</button>
+                <span className='form-span'>First Name: </span><input className='input' type="text" name="firstName" ref={inputRef} placeholder='enter your first name'/><br></br>
+                <span className='form-span'>Last Name: </span><input className='input' type="text" ref={lastNameRef} placeholder='enter your last name'  /><br></br>
+                <span className='form-span'>UserId: </span><input className='input' type="text" ref={userIdRef} placeholder='enter your user ID'  /><br></br>
+                <button className='user-form-submit-button' type="submit" value="submit">Submit</button>
             </form>
         </div>
         <DisplayUserInfo />
@@ -52,36 +76,3 @@ const UserForm =()=>{
 };
 
 export default UserForm;
-
-/**
-    useEffect(()=>{
-      const dataFromStorage = localStorage.getItem("my-data");
-      if(dataFromStorage){
-          setFirstName(JSON.parse(firstName))
-      }
-  },[setFirstName]);
-  
-    useEffect(()=>{
-      localStorage.setItem("my-data", JSON.stringify(firstName))
-  },[firstName]); */
-
-
-
-
-  /**        <UserContext.Provider  value={providerValue}>
-        <div className='form-div'>
-             {!showPreview && <form className='user-form' onSubmit={mySubmitFunction}>
-                <span>First Name: </span><input type="text" name="firstName" ref={inputRef} placeholder='enter your first name'/><br></br>
-                <span>Last Name: </span><input type="text" placeholder='enter your last name' onChange={e => setLastName(e.target.value)} /><br></br>
-                <span>UserId: </span><input type="text" placeholder='enter your user ID' onChange={e => setUserId(e.target.value)} /><br></br>
-                <input type="submit" value="submit" onClick={myFunc} />
-            </form>}
-            {showPreview && (<div>
-        <p>{firstName}</p>
-        <p>{lastName}</p>
-        <p>{userId}</p>
-      </div>)}
-        </div>
-        <DisplayUserInfo />
-        <FirebaseFunction />
-        </UserContext.Provider> */

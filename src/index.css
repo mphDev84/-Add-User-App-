@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: aliceblue;
 }
 
 code {
@@ -16,16 +17,188 @@ code {
   color:blue;
   letter-spacing: 4px;
 }
-.header-info{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+.header-info,
+.app-info{
+  width: 700px;
+  margin: auto;
+  font-family: monospace;
   font-size: 15px;
+}
+.find-a-user{
+  margin-top: 20px;
+  font-family:Georgia, 'Times New Roman', Times, serif ;
+  font-size: 15px;
+  letter-spacing: 3px;
+  background-color: rgb(179, 250, 209);
+  color: rgb(22, 5, 37);
+  width: fit-content;
+  padding: 3px 3px 3px 3px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border:3px solid rgb(24, 3, 43);
+  margin: auto;
+  margin-bottom: 1em;
+}
+.form-div{
+  display: flex;
+  flex-direction: row;
+  width:fit-content;
+  margin: auto;
+  background-color: rgb(128, 195, 253);
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+  border: solid rgb(198, 222, 243) 10px;
+}
+.form-div-two{
+  width:fit-content;
+  background-color: rgb(231, 149, 252);
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px;
+  border: solid rgb(105, 2, 97) 10px;
+}
+.form-span{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.input{
+  border:blue solid 2px;
+  border-radius: 10px;
+  margin: 5px 5px 5px 5px;
+  padding: 3px 3px 3px 3px;
+  width: 220px;
+}
+.user-form-submit-button{
+  color:rgb(2, 71, 2);
+  background-color: aquamarine;
+  border:2px rgb(25, 114, 22) solid;
+  border-radius: 10px;
+}
+.user-form-submit-button:hover{
+  cursor: pointer;
+  transform: scale(1.3);
+}
+.random-user-div{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+.buttons-div{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding-bottom: 20px;
+}
+.random-user{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin: auto;
+  padding-bottom: 15px;
+}
+.buttons-div{
+  background-color: rgb(173, 253, 238);
+  margin: 0 0 0 0;
+  align-items: center;
+}
+.refresh-button{
+  margin-top: 10px;
+  width:10em;
+  height:3em;
+  border:3px solid rgb(204, 186, 248);
+  cursor: pointer;
+  font-family:Georgia, 'Times New Roman', Times, serif ;
+  font-size: 15px;
+  letter-spacing: 3px;
+  color:rgb(56, 1, 1);
+  background-color: rgb(179, 250, 209);
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.random-user-button{
+  margin-top: 30px;
+  width:18em;
+  height:3em;
+  border:3px solid lightblue;
+  cursor: pointer;
+  font-family:Georgia, 'Times New Roman', Times, serif ;
+  font-size: 20px;
+  letter-spacing: 3px;
+  color:rgb(56, 1, 1);
+  background-color: antiquewhite;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.refresh-button:hover,
+.random-user-button:hover{
+  color: blue;
+  transform: scale(1.05);
 }
 .display-user-data{
   margin-top: 20px;
+  margin-left: 10px;
 }
-.user-data{
-  color: red;
+.user-data-header{
+  margin-top: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 3px;
+  color:rgb(6, 6, 129);
+  visibility: hidden;
+  background-color: aquamarine;
+  padding: 5px 5px 5px 5px;
+  border:2px blue solid;
+  border-radius: 8px;
+}
+.arrow-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.arrow-image{
+  height: 50px;
+}
+.database-loaded-header{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 2px;
+  color:blueviolet;
+  visibility: hidden;
+}
+#search-div{
+  visibility: hidden;
+  background-color: rgb(207, 252, 235);
+padding-top: 20px;
+}
+#user-name{
+text-align:start;
+  margin-left: 1em;
+  width: 20em;
+  color: rgb(201, 21, 21);
   font-family: monospace;
   font-size: 20px;
-  margin:0 0 0 0;
+ 
+}
+.user-data{
+  color:blue;
+  font-family: monospace;
+  font-size: 20px;
+}
+.display-user{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(166, 212, 252);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.magGlass{
+  height: 1.2em;
+}
+.search-form-submit-button:hover{
+  transform: scale(1.3);
+  cursor:pointer;
+}
+.search-form-submit-button{
+  color:rgb(2, 71, 2);
+  background-color: white;
+  border:2px rgb(25, 114, 22) solid;
+  border-radius: 10px;
 }
