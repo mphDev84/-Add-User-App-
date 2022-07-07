@@ -15,7 +15,7 @@ const GetFirebaseRealtime = ()=>{
         //firebase config details:
         const firebaseConfig = {/*API key etc goes here*/};
       
-          //initialize databases - here I have set up a realtime DB and a cloud firestore DB
+          //initialize databases - here I have set up a cloud firestore DB
           const app = initializeApp(firebaseConfig);
           let database = getDatabase(app);
    
